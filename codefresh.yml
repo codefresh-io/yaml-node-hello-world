@@ -1,50 +1,7 @@
 version: '1.0'
 
 steps:
-  clone-step-github:
-    type: git-clone
-    repo: https://github.com/codefresh-io/docker-node-hello-world
-    revision: master
-    credentials:
-      username: ${{github_user}}
-      password: ${{github_password}}
-
-  clone-step-stash:
-    type: git-clone
-    repo: https://stash-internal.codefresh.io/scm/cod/docker-node-hello-world.git
-    revision: master
-    credentials:
-      username: ${{stash_user}}
-      password: ${{stash_password}}
-
-  clone-step-bitbucket:
-    type: git-clone
-    repo: https://sfik@bitbucket.org/sfik/express-angular.git
-    revision: master
-    credentials:
-      username: ${{bb_user}}
-      password: ${{bb_password}}
-
-  build-github-prj:
-    type: build
-    description: github
-    image-name: codefreshio/github-prj
-    dockerfile: Dockerfile
-    working-directory: ${{clone-step-github}}
-    tag: latest
-
-  build-stash-prj:
-    type: build
-    description: stash
-    image-name: codefreshio/stash-prj
-    dockerfile: Dockerfile
-    working-directory: ${{clone-step-stash}}
-    tag: latest
-
-  build-bitbucket-prj:
-    type: build
-    description: bitbucket
-    image-name: codefreshio/bitbucket-prj
-    dockerfile: Dockerfile
-    working-directory: ${{clone-step-bitbucket}}
-    tag: latest
+  docker-in-docker:
+    image: docker
+    commands:
+      - docker run hello-world
