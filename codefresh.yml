@@ -22,4 +22,4 @@ steps:
     commands:
       - npm -v
       - echo branch:${{CF_BRANCH}}
-      - echo sha:${{CF_SHA}}
+      - echo sha:${{CF_REVISION}}
