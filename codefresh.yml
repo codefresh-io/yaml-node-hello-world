@@ -1,7 +1,5 @@
 version: '1.0'
 
 steps:
-  docker-in-docker:
-    image: docker
-    commands:
-      - docker run hello-world
+  freestyle_step:
+    image: ncodefresh/docker-spring-boot:latest
