@@ -15,3 +15,9 @@ steps:
     credentials:
       username: ${{username}}
       password: ${{password}}
+    fail-fast: false
+
+  next-step:
+    image: node:latest
+    commands:
+      - npm -v
