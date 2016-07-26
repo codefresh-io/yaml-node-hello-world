@@ -21,3 +21,5 @@ steps:
     image: node:latest
     commands:
       - npm -v
+      - echo branch:$CF-BRANCH
+      - echo sha:$CF-SHA
