@@ -4,3 +4,4 @@ steps:
   freestyle_step:
     image: ncodefresh/docker-spring-boot:latest
     commands:
+      - mvn -v
