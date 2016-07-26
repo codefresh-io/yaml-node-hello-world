@@ -3,8 +3,8 @@ version: '1.0'
 steps:
   build-prj:
     type: build
-    description: e2e use case
-    image-name: ${{DOCKERHUB_USER}}/yaml-node-4-revision
+    description: descr
+    image-name: ${{DOCKERHUB_USER}}/yaml-node-7
     dockerfile: Dockerfile
     tag: latest
 
