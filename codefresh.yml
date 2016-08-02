@@ -1,21 +1,21 @@
 version: '1.0'
 
 steps:
-  build-prj:
-    type: build
-    description: description
-    image-name: codefreshio/git-image
-    dockerfile: Dockerfile
-    tag: latest
-
-  push-prj:
-    type: push
-    candidate: ${{build-prj}}
-    tag: latest
-    credentials:
-      username: ${{username}}
-      password: ${{password}}
-    fail-fast: false
+#  build-prj:
+#    type: build
+#    description: description
+#    image-name: codefreshio/git-image
+#    dockerfile: Dockerfile
+#    tag: latest
+#
+#  push-prj:
+#    type: push
+#    candidate: ${{build-prj}}
+#    tag: latest
+#    credentials:
+#      username: ${{username}}
+#      password: ${{password}}
+#    fail-fast: false
 
   push-to-stash:
     image: codefreshio/git-image:latest
