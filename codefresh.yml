@@ -23,3 +23,5 @@ steps:
       - npm -v
       - git remote set-url origin ${{STASH_URL}}
       - git remote -v
+      - git add *
+      - git status
