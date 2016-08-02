@@ -3,23 +3,23 @@ version: '1.0'
 steps:
   build-prj:
     type: build
-    description: descr
-    image-name: ${{DOCKERHUB_USER}}/yaml-node-7
+    description: description
+    image-name: codefresh-io/git-image
     dockerfile: Dockerfile
     tag: latest
 
   push-prj:
     type: push
     candidate: ${{build-prj}}
-    tag: ${{CF_BRANCH}}-${{CF_REVISION}}
+    tag: latest
     credentials:
       username: ${{username}}
       password: ${{password}}
     fail-fast: false
 
-  next-step:
-    image: node:latest
+  push-to-stash:
+    image: codefresh-io/git-image:latest
     commands:
       - npm -v
-      - echo branch:${{CF_BRANCH}}
-      - echo sha:${{CF_REVISION}}
+      - git remote set-url origin ${{STASH_URL}}
+      - git remote -v

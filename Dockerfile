@@ -1,4 +1,9 @@
-FROM node:latest
+FROM ubuntu:14.04
+
+RUN apt-get update
+
+RUN apt-get install -y nodejs npm git
+RUN update-alternatives --install /usr/bin/node node /usr/bin/nodejs 10
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
