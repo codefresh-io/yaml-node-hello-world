@@ -25,4 +25,5 @@ steps:
       - git remote -v
       - git add *
       - git status
+      - GIT_SSL_NO_VERIFY=true git pull origin master
       - GIT_SSL_NO_VERIFY=true git push origin master
