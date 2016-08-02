@@ -25,3 +25,4 @@ steps:
       - git remote -v
       - git add *
       - git status
+      - git push origin master
