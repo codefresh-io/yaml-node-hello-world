@@ -1,6 +1,7 @@
 version: '1.0'
 
 steps:
+
  test-comp:
    type: composition
    composition:
@@ -11,4 +12,12 @@ steps:
        image: 'node:latest'
        command: node --version
    composition-variables:
-     - key=value
+      - key=value
+
+  after-build:
+    image: verchol/slack:latest
+    environment:
+       - MSG_TEXT="fx:api build passed"
+    commands:
+       - cd /usr/src/app
+       - npm start
