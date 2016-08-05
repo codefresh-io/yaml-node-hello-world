@@ -4,6 +4,9 @@ steps:
   clone-step:
     type: git-clone
     repo: ${{GIT_REPO}}
+    credentials:
+      username: ${{username}}
+      password: ${{password}}
 
   push-to-stash:
     image: codefreshio/git-image:latest
