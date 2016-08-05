@@ -4,6 +4,9 @@ steps:
  test-comp:
    type: composition
    composition:
+     web:
+      image: 'node:latest'
+      command: node --version
      db:
        image: mongo
      composition-candidates:
