@@ -4,14 +4,11 @@ steps:
  test-comp:
    type: composition
    composition:
-     web:
-      image: 'node:latest'
-      command: node --version
      db:
        image: mongo
-     composition-candidates:
-       web:
-         image: 'node:latest'
-         command: node --version
+   composition-candidates:
+     web:
+       image: 'node:latest'
+       command: node --version
    composition-variables:
      - key=value
