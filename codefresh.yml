@@ -3,15 +3,16 @@ version: '1.0'
 steps:
   clone-step:
     type: git-clone
-    repo: https://github.com/codefresh-io/yaml-node-hello-world.git
+    repo: ${{GIT_REPO}}
 
-  composition-step:
-   type: composition
-   composition: git-composition
-   working-directory: ${{clone-step}}
-   composition-candidates:
-    git-image:
-      image: 'codefreshio/git-image:latest'
-      command: bash -c 'git remote set-url origin $STASH_URL && git remote -v && git add * && git status && git commit -am "export repo" && GIT_SSL_NO_VERIFY=true git push origin master'
-   composition-variables:
-     - STASH_URL=${{STASH_URL}}
+  push-to-stash:
+    image: codefreshio/git-image:latest
+    commands:
+      - git remote set-url origin ${{STASH_URL}}
+      - git remote -v
+      - git checkout ${{REPO_BRANCH}}
+      - git add *
+      - git status
+      - git commit -am "export repo"
+      #- GIT_SSL_NO_VERIFY=true git pull origin master
+      - GIT_SSL_NO_VERIFY=true git push origin master
