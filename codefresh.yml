@@ -1,29 +1,29 @@
 version: '1.0'
 
 steps:
-#  build-prj:
-#    type: build
-#    description: description
-#    image-name: codefreshio/git-image
-#    dockerfile: Dockerfile
-#    tag: latest
-#
-#  push-prj:
-#    type: push
-#    candidate: ${{build-prj}}
-#    tag: latest
-#    credentials:
-#      username: ${{username}}
-#      password: ${{password}}
-#    fail-fast: false
+  build-prj:
+    type: build
+    description: description
+    image-name: codefreshio/git-image
+    dockerfile: Dockerfile
+    tag: latest
 
-  push-to-stash:
-    image: codefreshio/git-image:latest
-    commands:
-      - git remote set-url origin ${{STASH_URL}}
-      - git remote -v
-      - git add *
-      - git status
-      - git commit -am "export repo"
-      #- GIT_SSL_NO_VERIFY=true git pull origin master
-      - GIT_SSL_NO_VERIFY=true git push origin master
+  push-prj:
+    type: push
+    candidate: ${{build-prj}}
+    tag: latest
+    credentials:
+      username: ${{username}}
+      password: ${{password}}
+    fail-fast: false
+
+#  push-to-stash:
+#    image: codefreshio/git-image:latest
+#    commands:
+#      - git remote set-url origin ${{STASH_URL}}
+#      - git remote -v
+#      - git add *
+#      - git status
+#      - git commit -am "export repo"
+#      #- GIT_SSL_NO_VERIFY=true git pull origin master
+#      - GIT_SSL_NO_VERIFY=true git push origin master
