@@ -1,18 +1,18 @@
 version: '1.0'
 
 steps:
-  clone-step:
-    type: git-clone
-    repo: https://github.com/codefresh-io/yaml-node-hello-world.git
+#  clone-step:
+#    type: git-clone
+#    repo: https://github.com/codefresh-io/yaml-node-hello-world.git
 
   composition-step:
    type: composition
    composition: git-composition
-   working-directory: ${{clone-step}}
+#   working-directory: ${{clone-step}}
    composition-candidates:
-    web:
-      image: 'codefreshio/git-image:latest'
-      command: bash -c 'echo \"Waiting for DB\"'
+      web:
+        image: 'codefreshio/git-image:latest'
+        command: bash -c 'echo \"Waiting for DB\"'
 #      command: bash -c 'git remote set-url origin $STASH_URL && git remote -v && git add * && git status && git commit -am "export repo" && GIT_SSL_NO_VERIFY=true git push origin master'
    composition-variables:
      - STASH_URL=${{STASH_URL}}
