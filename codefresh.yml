@@ -13,7 +13,7 @@ steps:
   push-to-s3:
     image: garland/aws-cli-docker:latest
     commands:
-      - aws s3 cp Dockerfile s3://codefresh-demo/
+      - aws s3 cp /usr/src/app/Dockerfile s3://codefresh-demo/
       - aws s3 ls s3://codefresh-demo/
     environment:
       - AWS_ACCESS_KEY_ID=${{AWS_ACCESS_KEY_ID}}
