@@ -9,3 +9,12 @@ steps:
     tag: latest
     build-arguments:
       - argument=TEST
+
+  push-to-s3:
+    image: garland/aws-cli-docker:latest
+    commands:
+      - aws s3 ls
+    environment:
+      - AWS_ACCESS_KEY_ID=${{AWS_ACCESS_KEY_ID}}
+      - AWS_SECRET_ACCESS_KEY=${{AWS_SECRET_ACCESS_KEY}}
+      - AWS_DEFAULT_REGION=${{AWS_DEFAULT_REGION}}
