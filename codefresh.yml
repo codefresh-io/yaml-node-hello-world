@@ -14,7 +14,7 @@ steps:
     image: garland/aws-cli-docker:latest
     working-directory: ${{build-prj}}
     commands:
-      - bash -c 'ls'
+      - ls
       - aws s3 cp Dockerfile s3://codefresh-demo/
       - aws s3 ls s3://codefresh-demo/
     environment:
