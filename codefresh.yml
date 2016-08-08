@@ -12,6 +12,7 @@ steps:
 
   push-to-s3:
     image: garland/aws-cli-docker:latest
+    working-directory: ${{build-prj}}
     commands:
       - aws s3 cp /usr/src/app/Dockerfile s3://codefresh-demo/
       - aws s3 ls s3://codefresh-demo/
