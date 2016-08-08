@@ -1,18 +1,19 @@
 version: '1.0'
 
 steps:
-#  build-prj:
-#    type: build
-#    description: e2e use case
-#    image-name: codefreshio/yaml-node-3
-#    dockerfile: Dockerfile
-#    tag: latest
-#    build-arguments:
-#      - argument=TEST
+  build-prj:
+    type: build
+    description: e2e use case
+    image-name: codefreshio/yaml-node-3
+    dockerfile: Dockerfile
+    tag: latest
+    build-arguments:
+      - argument=TEST
 
   push-to-s3:
     image: garland/aws-cli-docker:latest
     commands:
+      - aws s3 cp Dockerfile s3://codefresh-demo/
       - aws s3 ls s3://codefresh-demo/
     environment:
       - AWS_ACCESS_KEY_ID=${{AWS_ACCESS_KEY_ID}}
