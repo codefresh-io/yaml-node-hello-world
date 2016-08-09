@@ -10,7 +10,7 @@ steps:
    composition: git-composition
 #   working-directory: ${{clone-step}}
    composition-candidates:
-      web:
+      web2:
         image: 'codefreshio/git-image:latest'
         command: bash -c 'echo \"Waiting for DB\"'
 #      command: bash -c 'git remote set-url origin $STASH_URL && git remote -v && git add * && git status && git commit -am "export repo" && GIT_SSL_NO_VERIFY=true git push origin master'
