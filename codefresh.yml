@@ -10,7 +10,6 @@ steps:
    composition: git-composition
    working-directory: ${{clone-step}}
    composition-candidates:
-    version: '2'
     services:
       web:
         image: 'codefreshio/git-image:latest'
