@@ -13,6 +13,6 @@ steps:
       web2:
         image: 'codefreshio/git-image:latest'
 #        command: bash -c 'echo \"Waiting for DB\"'
-        command: bash -c 'git remote set-url origin $STASH_URL && git remote -v && git add * && git status && git commit -am "export repo"'
+        command: bash -c 'pwd;ls -laxo;whoami; git remote set-url origin $STASH_URL && git remote -v && git add * && git status && git commit -am "export repo"'
    composition-variables:
      - STASH_URL=${{STASH_URL}}
