@@ -5,6 +5,7 @@ steps:
     type: git-clone
     repo: https://github.com/codefresh-io/yaml-node-hello-world.git
 
+
   composition-step:
    type: composition
    composition: git-composition
