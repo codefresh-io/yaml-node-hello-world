@@ -1,21 +1,20 @@
 version: '1.0'
 
 steps:
-  clone-step:
-    type: git-clone
-    repo: https://github.com/codefresh-io/yaml-node-hello-world.git
-
-
+#  clone-step:
+#    type: git-clone
+#    repo: https://github.com/codefresh-io/yaml-node-hello-world.git
+  
+  build-step:
+    type: build
+    image-name: codefreshio/yaml-node-hello
+    dockerfile: Dockerfile
+    tag: latest  
+    
   composition-step:
-   type: composition
-   composition: git-composition
-   working-directory: ${{clone-step}}
-   composition-candidates:
-    version: '2'
-    services:
-      web:
-        image: 'codefreshio/git-image:latest'
-        command: bash -c 'echo \"Waiting for DB\";cd /usr/src/app/;pwd;ls -laxo;whoami;'
-#        command: bash -c 'cd /usr/src/app/;pwd;ls -laxo;whoami;  git remote set-url origin $STASH_URL && git remote -v && git add * && git status && git commit -am "export repo"'
-   composition-variables:
-     - STASH_URL=${{STASH_URL}}
+    type: composition
+    composition: test-composition-image
+    composition-candidates:
+      small:
+        image: ${{build-step}}
+        command: echo \"Waiting for DB\"
