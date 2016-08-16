@@ -13,6 +13,8 @@ steps:
 
   test-step:
     image: codefreshio/git-image:latest
+    commands:
+      - echo 'run and exit'
 
   composition-step:
     type: composition
