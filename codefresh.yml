@@ -9,12 +9,15 @@ steps:
     type: build
     image-name: codefreshio/yaml-node-hello
     dockerfile: Dockerfile
-    tag: latest  
-    
+    tag: latest
+
+  test-step:
+    image: codefreshio/git-image:latest
+
   composition-step:
     type: composition
     composition: test-composition-image
     composition-candidates:
       main:
-        image: ${{build-step}}
-        command: echo \"Waiting for DB\"
+        image: ${{test-step}}
+        command: bash -c 'git status'
