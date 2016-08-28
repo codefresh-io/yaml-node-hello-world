@@ -1,6 +1,11 @@
 version: '1.0'
 
 steps:
+  docker-in-docker:
+    image: docker:dind
+    commands:
+      - docker images
+
   build-prj:
     type: build
     description: e2e use case

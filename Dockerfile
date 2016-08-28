@@ -1,10 +1,10 @@
-#FROM node:latest
-FROM docker:dind
+FROM node:latest
+#FROM docker:dind
 
 # Install Node
-RUN apt-get update
-RUN apt-get install -y nodejs npm
-RUN update-alternatives --install /usr/bin/node node /usr/bin/nodejs 10
+#RUN apt-get update
+#RUN apt-get install -y nodejs npm
+#RUN update-alternatives --install /usr/bin/node node /usr/bin/nodejs 10
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
