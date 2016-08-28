@@ -1,0 +1,42 @@
+{
+  "data": [
+    {
+      "credential": {
+        "_class": "OAuth2Credentials",
+        "_module": "oauth2client.client",
+        "access_token": "ya29.Ci9NA9C8CebvE-Et-jbcyyqcDI0eCmU2ej3pvQSwi1PctaAM0HQ-n3QMBllAoY8svQ",
+        "client_id": "32555940559.apps.googleusercontent.com",
+        "client_secret": "ZmssLNjJy2998hD4CTg2ejr2",
+        "id_token": {
+          "at_hash": "o3NHig8mGgZ6ZYPknv8Sew",
+          "aud": "32555940559.apps.googleusercontent.com",
+          "azp": "32555940559.apps.googleusercontent.com",
+          "email": "nikolai@codefresh.io",
+          "email_verified": true,
+          "exp": 1472396748,
+          "hd": "codefresh.io",
+          "iat": 1472393148,
+          "iss": "accounts.google.com",
+          "sub": "106741359296038483404"
+        },
+        "invalid": false,
+        "refresh_token": "1/RMpWP_Usc9h-ef9u9eCh1CwYy7Dkty_dxXoLjOtCk-Y",
+        "revoke_uri": "https://accounts.google.com/o/oauth2/revoke",
+        "token_expiry": "2016-08-28T15:30:31Z",
+        "token_response": {
+          "access_token": "ya29.Ci9NA9C8CebvE-Et-jbcyyqcDI0eCmU2ej3pvQSwi1PctaAM0HQ-n3QMBllAoY8svQ",
+          "expires_in": 3600,
+          "id_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjQ4ZGZjNzdmYmY1NDU3MmM3ZjZiNGIyZTg3ZjQ2MzA4YWYyYzg4ODgifQ.eyJpc3MiOiJhY2NvdW50cy5nb29nbGUuY29tIiwiYXRfaGFzaCI6IjM2dVRJVzhJeVZEampJaU1jQkRoUmciLCJhdWQiOiIzMjU1NTk0MDU1OS5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsInN1YiI6IjEwNjc0MTM1OTI5NjAzODQ4MzQwNCIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJhenAiOiIzMjU1NTk0MDU1OS5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsImhkIjoiY29kZWZyZXNoLmlvIiwiZW1haWwiOiJuaWtvbGFpQGNvZGVmcmVzaC5pbyIsImlhdCI6MTQ3MjM5NDYzMSwiZXhwIjoxNDcyMzk4MjMxfQ.MKB1KBqA84j6vWtU-4GT5ZvuKz6Iq2_6ZdVhwW3D6j4KmrdiFL5YFvIaIcws4LP3W9KhBSw90uQEgj-KwJTO2CXiGH_rb4dXAIa1b_jV1FIBLjvwWMKQj5hdw2qpAnrDO60Nm3MZqTuy8n4ooqf_t0ZNUBdJehrAoDHvK1hPL7LqGz-XMl3EX7NTsmRwtUvlsyaiZTp-V0xaiw-iNyteEo5Qv1xTiw19NxqtnQl5ylgWHmsKqrhMHXPfa3Fl10h7qyt6gJjcBXIrgFCilj9orgODyJlFgNHmI_xC09QW-c13QmFJyux66TlXM4j-HuVLk8MwCHLevvVQI5aFkmqU4g",
+          "token_type": "Bearer"
+        },
+        "token_uri": "https://accounts.google.com/o/oauth2/token",
+        "user_agent": "google-cloud-sdk"
+      },
+      "key": {
+        "account": "nikolai@codefresh.io",
+        "type": "google-cloud-sdk"
+      }
+    }
+  ],
+  "file_version": 1
+}

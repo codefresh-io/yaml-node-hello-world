@@ -1,7 +1,6 @@
 version: '1.0'
 
 steps:
-
   build-prj:
     type: build
     description: e2e use case
@@ -14,5 +13,5 @@ steps:
     working-directory: ${{initial-clone}}
     commands:
       - ls
-      - gcloud auth activate-service-account nikolai@codefresh.io --key-file ./cf-ci-9d3223a0a90d.p12 --project cf-ci-1027
+      - gcloud auth activate-service-account "Service account 1" --key-file ./cf-ci-9d3223a0a90d.p12 --project cf-ci-1027
       - gcloud info
