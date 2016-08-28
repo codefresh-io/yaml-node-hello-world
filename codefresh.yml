@@ -4,7 +4,7 @@ steps:
   build-prj:
     type: build
     description: e2e use case
-    image-name: codefreshio/yaml-node-3
+    image-name: gcr.io/cf-ci-1027/yaml-node
     dockerfile: Dockerfile
     tag: latest
 
@@ -14,6 +14,5 @@ steps:
     commands:
       - ls
       - gcloud auth activate-service-account account-1@cf-ci-1027.iam.gserviceaccount.com --key-file ./cf-ci-9d3223a0a90d.p12 --project cf-ci-1027
-#      - gcloud auth activate-service-account cf-ci-1027@appspot.gserviceaccount.com --project cf-ci-1027
-#      - gcloud auth activate-service-account nikolai@codefresh.io --key-file ./client_secret.json --project cf-ci-1027
       - gcloud info
+      - gcloud docker push gcr.io/cf-ci-1027/yaml-node
