@@ -13,8 +13,7 @@ steps:
     working-directory: ${{initial-clone}}
     commands:
       - ls
-#      - gcloud auth activate-service-account "service account" --key-file ./cf-ci-9d3223a0a90d.p12 --project cf-ci-1027
-      - gcloud auth activate-service-account "service account" --project cf-ci-1027
+      - gcloud auth activate-service-account account-1@cf-ci-1027.iam.gserviceaccount.com --key-file ./cf-ci-9d3223a0a90d.p12 --project cf-ci-1027
 #      - gcloud auth activate-service-account cf-ci-1027@appspot.gserviceaccount.com --project cf-ci-1027
 #      - gcloud auth activate-service-account nikolai@codefresh.io --key-file ./client_secret.json --project cf-ci-1027
       - gcloud info
