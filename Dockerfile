@@ -1,5 +1,5 @@
 #FROM node:latest
-FROM docker:latest
+FROM docker:dind
 
 # Install Node
 RUN apt-get update
