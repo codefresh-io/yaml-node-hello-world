@@ -8,5 +8,9 @@ steps:
     image-name: codefreshio/yaml-node-3
     dockerfile: Dockerfile
     tag: latest
-    build-arguments:
-      - argument=TEST
+
+  push-to-gcr:
+    image: google/cloud-sdk
+    commands:
+      - gcloud init
+      - gcloud info
