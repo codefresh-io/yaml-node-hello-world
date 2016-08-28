@@ -1,6 +1,11 @@
-FROM node:latest
+#FROM node:latest
+FROM docker:latest
 
-ARG argument
+# Install Node
+RUN apt-get update
+RUN apt-get install -y nodejs npm
+RUN update-alternatives --install /usr/bin/node node /usr/bin/nodejs 10
+
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
@@ -11,5 +16,4 @@ EXPOSE 3000
 
 ENV PORT 3000
 
-RUN echo $argument
 CMD [ "npm", "start" ]
