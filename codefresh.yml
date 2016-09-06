@@ -1,0 +1,27 @@
+version: '1.0'
+steps:
+
+  build-prj:
+    type: build
+    description: e2e use case
+    image-name: codefreshio/yaml-node-3
+    dockerfile:
+      content: |
+        FROM node:latest
+
+        ARG argument
+        RUN mkdir -p /usr/src/app
+        WORKDIR /usr/src/app
+
+        COPY package.json /usr/src/app/
+        RUN npm install --silent
+        COPY . /usr/src/app
+        EXPOSE 3000
+
+        ENV PORT 3000
+
+        RUN echo $argument
+        CMD [ "npm", "start" ]
+    tag: latest
+    build-arguments:
+      - argument=TEST
