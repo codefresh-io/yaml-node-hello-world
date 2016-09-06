@@ -8,8 +8,9 @@ steps:
     dockerfile:
       content: |
         FROM node:latest
-
+#         sdfsdf
         ARG argument
+#        asdad
         WORKDIR /usr/src/app
 
         COPY package.json /usr/src/app/
