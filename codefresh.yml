@@ -4,13 +4,14 @@ steps:
     type: build
     description: e2e use case
     image-name: codefreshio/yaml-node-3
-    working-directory: ${{initial-clone}}
     dockerfile: Dockerfile
     tag: latest
+    build-arguments:
+      - folder=${{shared_folder}}
 
   unit-test:
     image: noamt/pre-cached-sbt:latest
-    working-directory: ${{initial-clone}}
+    working-directory: ${{shared_folder}}
     commands:
       - pwd
       - ls -l

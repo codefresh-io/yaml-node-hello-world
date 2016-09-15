@@ -1,11 +1,15 @@
 FROM node:latest
 
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
+ARG folder
 
-COPY package.json /usr/src/app/
+RUN echo $folder
+
+RUN mkdir -p $folder
+WORKDIR $folder
+
+COPY package.json $folder
 RUN npm install --silent
-COPY . /usr/src/app
+COPY . $folder
 EXPOSE 3000
 
 RUN echo "I can write without double quotes" >> file.txt
