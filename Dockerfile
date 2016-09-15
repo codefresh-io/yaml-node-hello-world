@@ -4,12 +4,12 @@ ARG folder
 
 RUN echo $folder
 
-RUN mkdir -p $folder
+#RUN mkdir -p $folder
 WORKDIR $folder
 
-COPY package.json $folder
+#COPY package.json $folder
 RUN npm install --silent
-COPY . $folder
+#COPY . $folder
 EXPOSE 3000
 
 RUN echo "I can write without double quotes" >> file.txt
