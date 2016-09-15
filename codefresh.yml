@@ -10,7 +10,7 @@ steps:
 
   unit-test:
     image: noamt/pre-cached-sbt:latest
-    working-directory: /usr/src/app
+    working-directory: ${{build-prj}}
     commands:
       - pwd
       - ls -l
