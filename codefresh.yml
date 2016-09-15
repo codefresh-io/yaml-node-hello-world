@@ -1,38 +1,15 @@
 version: '1.0'
 steps:
-
   build-prj:
     type: build
     description: e2e use case
     image-name: codefreshio/yaml-node-3
-    dockerfile:
-      content: |
-        FROM node:latest
-
-        ARG argument
-
-        RUN set -x \
-        &&  apt-get update \
-        &&  apt-get install -y $BUILD_DEPS --no-install-recommends \
-        &&  rm -rf /var/lib/apt/lists/* \
-        &&  npm install --production \
-        &&  npm install $LCB_PLUGINS \
-        &&  npm dedupe \
-        &&  npm cache clean \
-        &&  rm -rf /tmp/npm* \
-        &&  apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false -o APT::AutoRemove::SuggestsImportant=false $BUILD_DEPS
-
-        WORKDIR /usr/src/app
-
-        COPY package.json /usr/src/app/
-        RUN npm install --silent
-        COPY . /usr/src/app
-        EXPOSE 3000
-
-        ENV PORT 3000
-
-        RUN echo $argument
-        CMD [ "npm", "start" ]
+    dockerfile: Dockerfile
     tag: latest
-    build-arguments:
-      - argument=TEST
+
+
+  unit-test:
+    image: noamt/pre-cached-sbt:latest
+    working-directory: ${{initial-clone}}
+    commands:
+      - ls -l

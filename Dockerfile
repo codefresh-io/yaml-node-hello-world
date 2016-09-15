@@ -7,5 +7,8 @@ COPY package.json /usr/src/app/
 RUN npm install --silent
 COPY . /usr/src/app
 EXPOSE 3000
+
+RUN echo "I can write without double quotes" >> file.txt
+
 ENV PORT 3000
 CMD [ "npm", "start" ]
