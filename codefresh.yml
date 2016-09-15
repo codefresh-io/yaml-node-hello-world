@@ -12,4 +12,5 @@ steps:
     image: noamt/pre-cached-sbt:latest
     working-directory: ${{initial-clone}}
     commands:
+      - pwd
       - ls -l

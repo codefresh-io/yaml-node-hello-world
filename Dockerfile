@@ -9,6 +9,10 @@ COPY . /usr/src/app
 EXPOSE 3000
 
 RUN echo "I can write without double quotes" >> file.txt
+
 RUN ls -l
+
+RUN pwd
+
 ENV PORT 3000
 CMD [ "npm", "start" ]
