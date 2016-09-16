@@ -6,12 +6,12 @@ steps:
     image-name: codefreshio/yaml-node-3
     dockerfile: Dockerfile
     tag: latest
-    build-arguments:
-      - folder=${{shared_folder}}
+#    build-arguments:
+#      - folder=${{shared_folder}}
 
   unit-test:
-    image: noamt/pre-cached-sbt:latest
-    working-directory: ${{shared_folder}}
+    image: node: latest
+    working-directory: ${{initial-clone}}
     commands:
       - pwd
       - ls -l
