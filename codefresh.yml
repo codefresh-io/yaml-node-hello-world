@@ -7,13 +7,13 @@ steps:
     dockerfile: Dockerfile
     tag: latest
 
-    push:
-      type: push
-      candidate: ${{build-prj}}
-      tag: latest
-      credentials:
-        username: ${{username}}
-        password: ${{password}}
+  push:
+    type: push
+    candidate: ${{build-prj}}
+    tag: latest
+    credentials:
+      username: ${{username}}
+      password: ${{password}}
 
 
 #  unit-test:
