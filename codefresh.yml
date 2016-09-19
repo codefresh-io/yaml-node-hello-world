@@ -3,15 +3,22 @@ steps:
   build-prj:
     type: build
     description: e2e use case
-    image-name: codefreshio/yaml-node-3
+    image-name: ncodefresh/yaml-node-3
     dockerfile: Dockerfile
     tag: latest
-#    build-arguments:
-#      - folder=${{shared_folder}}
 
-  unit-test:
-    image: ${{build-prj}}
-    working-directory: "/usr/src/app"
-    commands:
-      - pwd
-      - ls -l
+    push:
+      type: push
+      candidate: ${{build-prj}}
+      tag: latest
+      credentials:
+        username: ${{username}}
+        password: ${{password}}
+
+
+#  unit-test:
+#    image: ${{build-prj}}
+#    working-directory: "/usr/src/app"
+#    commands:
+#      - pwd
+#      - ls -l
