@@ -11,7 +11,7 @@ steps:
 
   unit-test:
     image: ${{build-prj}}
-    working-directory: ${{build-prj}}
+    working-directory: "/usr/src/app"
     commands:
       - pwd
       - ls -l
