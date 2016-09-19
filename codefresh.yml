@@ -10,8 +10,8 @@ steps:
 #      - folder=${{shared_folder}}
 
   unit-test:
-    image: node:latest
-    working-directory: ${{initial-clone}}
+    image: ${{build-prj}}
+    working-directory: ${{build-prj}}
     commands:
       - pwd
       - ls -l
