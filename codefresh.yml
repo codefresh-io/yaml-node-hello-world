@@ -20,5 +20,8 @@ steps:
     image: ${{build-prj}}
     commands:
       - set -v
+      - echo $?
       - pwd
+      - echo $?
       - ls -l
+      - echo $?
