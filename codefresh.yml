@@ -19,5 +19,6 @@ steps:
   unit-test:
     image: ${{build-prj}}
     commands:
+      - set -v
       - pwd
       - ls -l
