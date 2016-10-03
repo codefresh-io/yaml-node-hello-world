@@ -9,7 +9,8 @@ steps:
   build-prj:
     type: build
     description: e2e use case
-    image-name: gcr.io/cf-ci-1027/yaml-node
+#    image-name: gcr.io/cf-ci-1027/yaml-node
+    image-name: codefresh-io/yaml-node
     dockerfile: Dockerfile
     tag: latest
 
