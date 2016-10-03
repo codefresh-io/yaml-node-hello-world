@@ -1,10 +1,10 @@
 version: '1.0'
 
 steps:
-  docker-in-docker:
-    image: docker:dind
-    commands:
-      - docker images
+#  docker-in-docker:
+#    image: docker:dind
+#    commands:
+#      - docker images
 
   build-prj:
     type: build
@@ -13,11 +13,11 @@ steps:
     dockerfile: Dockerfile
     tag: latest
 
-  push-to-gcr:
-    image: google/cloud-sdk
-    working-directory: ${{initial-clone}}
-    commands:
-      - ls
-      - gcloud auth activate-service-account account-1@cf-ci-1027.iam.gserviceaccount.com --key-file ./cf-ci-9d3223a0a90d.p12 --project cf-ci-1027
-      - gcloud info
-      - gcloud docker push gcr.io/cf-ci-1027/yaml-node
+#  push-to-gcr:
+#    image: google/cloud-sdk
+#    working-directory: ${{initial-clone}}
+#    commands:
+#      - ls
+#      - gcloud auth activate-service-account account-1@cf-ci-1027.iam.gserviceaccount.com --key-file ./cf-ci-9d3223a0a90d.p12 --project cf-ci-1027
+#      - gcloud info
+#      - gcloud docker push gcr.io/cf-ci-1027/yaml-node
