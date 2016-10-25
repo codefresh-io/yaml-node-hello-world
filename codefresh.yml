@@ -7,17 +7,14 @@ steps:
     image-name: codefreshio/yaml-node-3
     dockerfile: Dockerfile
     tag: latest
-    build-arguments:
-      - argument=TEST
 
-  push-to-s3:
-    image: garland/aws-cli-docker:latest
-    working-directory: ${{build-prj}}
-    commands:
-      - ls
-      - aws s3 cp Dockerfile s3://codefresh-demo/
-      - aws s3 ls s3://codefresh-demo/
-    environment:
-      - AWS_ACCESS_KEY_ID=${{AWS_ACCESS_KEY_ID}}
-      - AWS_SECRET_ACCESS_KEY=${{AWS_SECRET_ACCESS_KEY}}
-      - AWS_DEFAULT_REGION=${{AWS_DEFAULT_REGION}}
+  push-step:
+    type: push
+    description: Free text description
+    candidate: ${{build-prj}}
+    tag: ${{CF_BRANCH}}
+    registry: ${{AWS_REGISTRY}}
+    credentials:
+      username: ${{AWS_ACCESS_KEY_ID}}
+      password: ${{AWS_SECRET_ACCESS_KEY}}
+    fail-fast: false
